@@ -26,6 +26,8 @@ class FutureInvestmentTest {
 
     FITValues test3 = new FITValues(1500d, 3.25d, 1, "1549.48");
 
+    FITValues test4 = new FITValues(299999d, 2.5d, 30, "634602.6");
+
     @Test
     public void test1TimeTrial() {
         testTimeTrial(test1.testInvestmentAmount, test1.testAnnualInterestRate, test1.testNumberOfYears, test1.solution);
@@ -69,6 +71,21 @@ class FutureInvestmentTest {
     @Test
     public void test33I() {
         test3I(test3.testInvestmentAmount, test3.testAnnualInterestRate, test3.testNumberOfYears, test3.solution);
+    }
+
+    @Test
+    public void test4TimeTrial() {
+        testTimeTrial(test4.testInvestmentAmount, test4.testAnnualInterestRate, test4.testNumberOfYears, test4.solution);
+    }
+
+    @Test
+    public void test4DC() {
+        testDC(test4.testInvestmentAmount, test4.testAnnualInterestRate, test4.testNumberOfYears, test4.solution);
+    }
+
+    @Test
+    public void test43I() {
+        test3I(test4.testInvestmentAmount, test4.testAnnualInterestRate, test4.testNumberOfYears, test4.solution);
     }
 
     @Test

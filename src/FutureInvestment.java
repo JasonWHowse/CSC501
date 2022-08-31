@@ -86,6 +86,6 @@ class Testing  {
             }
         }
         FI.calculateFutureInvestment();
-        System.out.println("Accumulated value is " + FI.getFutureInvestmentValue());
+        System.out.println("Accumulated value is $" + FI.getFutureInvestmentValue());
     }
 }
