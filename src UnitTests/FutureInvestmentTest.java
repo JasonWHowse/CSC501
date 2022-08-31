@@ -30,7 +30,7 @@ class FutureInvestmentTest {
 
     @Test
     public void test1TimeTrial() {
-        testTimeTrial(test1.testInvestmentAmount, test1.testAnnualInterestRate, test1.testNumberOfYears, test1.solution);
+        testTimeTrial(test1.testInvestmentAmount, test1.testAnnualInterestRate, test1.testNumberOfYears);
     }
 
     @Test
@@ -45,7 +45,7 @@ class FutureInvestmentTest {
 
     @Test
     public void test2TimeTrial() {
-        testTimeTrial(test2.testInvestmentAmount, test2.testAnnualInterestRate, test2.testNumberOfYears, test2.solution);
+        testTimeTrial(test2.testInvestmentAmount, test2.testAnnualInterestRate, test2.testNumberOfYears);
     }
 
     @Test
@@ -60,7 +60,7 @@ class FutureInvestmentTest {
 
     @Test
     public void test3TimeTrial() {
-        testTimeTrial(test3.testInvestmentAmount, test3.testAnnualInterestRate, test3.testNumberOfYears, test3.solution);
+        testTimeTrial(test3.testInvestmentAmount, test3.testAnnualInterestRate, test3.testNumberOfYears);
     }
 
     @Test
@@ -75,7 +75,7 @@ class FutureInvestmentTest {
 
     @Test
     public void test4TimeTrial() {
-        testTimeTrial(test4.testInvestmentAmount, test4.testAnnualInterestRate, test4.testNumberOfYears, test4.solution);
+        testTimeTrial(test4.testInvestmentAmount, test4.testAnnualInterestRate, test4.testNumberOfYears);
     }
 
     @Test
@@ -93,7 +93,7 @@ class FutureInvestmentTest {
         assertEquals(new FutureInvestment().getFutureInvestmentValue(), "Value not calculated yet");
     }
 
-    private void testTimeTrial(double testInvestmentAmount, double testMonthlyInterestRate, int testNumberOfYears, String solution) {
+    private void testTimeTrial(double testInvestmentAmount, double testMonthlyInterestRate, int testNumberOfYears) {
         Assertions.assertTimeout(Duration.ofSeconds(3),()->new FutureInvestment(testInvestmentAmount, testMonthlyInterestRate, testNumberOfYears).getFutureInvestmentValue());
     }
 
