@@ -49,7 +49,7 @@ public class FutureInvestment {
     }
 }
 
-class Testing {
+class Testing  {
     public static void main(String[] args) {
         FutureInvestment FI = new FutureInvestment();
         boolean flag = true;
