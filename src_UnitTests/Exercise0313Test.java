@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-class Exercise03_13Test {
+class Exercise0313Test {
 
     @Test
     public void testTime1(){

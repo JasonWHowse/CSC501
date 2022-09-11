@@ -6,7 +6,7 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-class Exercise03_23Test {
+class Exercise0323Test {
     @Test
     public void test1(){
         double width = 0.0d;
