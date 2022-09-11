@@ -145,6 +145,30 @@ class Exercise03_23Test {
         timeTest(width,height,x,y,x1,y1);
     }
 
+    @Test
+    public void test7(){
+        double width = 2.0d;
+        double height = 4.0d;
+        double x = 2.0d;
+        double y = 4.0d;
+        double x1 = 3.0d;
+        double y1 = -7.0d;
+        boolean solution = false;
+        test(width,height,x,y,x1,y1, solution);
+    }
+
+    @Test
+    public void test8(){
+        double width = 2.0d;
+        double height = 4.0d;
+        double x = 2.0d;
+        double y = 4.0d;
+        double x1 = -3.0d;
+        double y1 = 6.0d;
+        boolean solution = false;
+        test(width,height,x,y,x1,y1, solution);
+    }
+
     private void timeTest(double width, double height, double x, double y, double x1, double y1) {
         Assertions.assertTimeout(Duration.ofSeconds(3), () -> {
             Exercise03_23 pir = new Exercise03_23(width, height, x, y);
