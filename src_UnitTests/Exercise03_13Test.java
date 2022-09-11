@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-class TaxesTest {
+class Exercise03_13Test {
 
     @Test
     public void testTime1(){
@@ -67,7 +67,7 @@ class TaxesTest {
 
     private void timeTest(int status, int amount){
         Assertions.assertTimeout(Duration.ofSeconds(3),()->{
-            Taxes taxes = new Taxes((new TaxDataInfo().taxData));
+            Exercise03_13 taxes = new Exercise03_13((new TaxDataInfo().taxData));
             taxes.setStatus(status);
             taxes.setTaxableIncome(amount);
             taxes.calculateTaxes();
@@ -75,7 +75,7 @@ class TaxesTest {
     }
 
     private void test(int status, int amount, double solution){
-        Taxes taxes = new Taxes((new TaxDataInfo().taxData));
+        Exercise03_13 taxes = new Exercise03_13((new TaxDataInfo().taxData));
         taxes.setStatus(status);
         taxes.setTaxableIncome(amount);
         assertEquals(solution,taxes.calculateTaxes());

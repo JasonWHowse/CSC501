@@ -1,24 +1,24 @@
 import java.util.Scanner;
-public class PointInRectangle {
+public class Exercise03_23 {
     private final double width;
     private final double height;
     private final double[] center;
 
-    public PointInRectangle(double width, double height){
+    public Exercise03_23(double width, double height){
         this(width,height, 0.0d,0.0d);
     }
 
-    public PointInRectangle(double width, double height, double x, double y){
+    public Exercise03_23(double width, double height, double x, double y){
         this.width = width;
         this.height = height;
         this.center = new double[]{x, y};
     }
 
-    public PointInRectangle(int width, int height){
+    public Exercise03_23(int width, int height){
         this(width,height, 0,0);
     }
 
-    public PointInRectangle(int width, int height, int x, int y){
+    public Exercise03_23(int width, int height, int x, int y){
         this(width,height, x,(double)y);
     }
 
@@ -49,7 +49,7 @@ public class PointInRectangle {
 
 class TestingPointInRectangle {
     public static void main(String[] args) {
-        PointInRectangle pir = new PointInRectangle(10,5, 0,0);
+        Exercise03_23 pir = new Exercise03_23(10,5, 0,0);
 
         boolean flag = true;
         while (flag) {

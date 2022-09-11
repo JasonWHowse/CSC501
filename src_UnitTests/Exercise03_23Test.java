@@ -6,7 +6,7 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-class PointInRectangleTest {
+class Exercise03_23Test {
     @Test
     public void test1(){
         double width = 0.0d;
@@ -147,13 +147,13 @@ class PointInRectangleTest {
 
     private void timeTest(double width, double height, double x, double y, double x1, double y1) {
         Assertions.assertTimeout(Duration.ofSeconds(3), () -> {
-            PointInRectangle pir = new PointInRectangle(width, height, x, y);
+            Exercise03_23 pir = new Exercise03_23(width, height, x, y);
             pir.isWithinRectangle(x1, y1);
         });
     }
 
     private void test(double width, double height, double x, double y, double x1, double y1, boolean solution) {
-        PointInRectangle pir = new PointInRectangle(width, height, x, y);
+        Exercise03_23 pir = new Exercise03_23(width, height, x, y);
         if (solution) {
             assertTrue(pir.isWithinRectangle(x1, y1));
         } else {

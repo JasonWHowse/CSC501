@@ -71,7 +71,7 @@ public class TaxData {
         return this.headMaxAmt;
     }
 
-    public int getMaxAmt(Taxes.filingStatus FS){
+    public int getMaxAmt(Exercise03_13.filingStatus FS){
         switch (FS){
             case SINGLE:
                 return this.singleMaxAmt;

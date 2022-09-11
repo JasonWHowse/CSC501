@@ -9,15 +9,14 @@ class TaxDataTest {
         for(int i = 0; i<6; i++){
             assertEquals(value[i][0],td.getRate());
             assertEquals(value[i][1],td.getSingleMaxAmt());
-            assertEquals(value[i][1],td.getMaxAmt(Taxes.filingStatus.SINGLE));
+            assertEquals(value[i][1],td.getMaxAmt(Exercise03_13.filingStatus.SINGLE));
             assertEquals(value[i][2],td.getMarriedJointlyMaxAmt());
-            assertEquals(value[i][2],td.getMaxAmt(Taxes.filingStatus.MARRIED_FILING_JOINTLY));
+            assertEquals(value[i][2],td.getMaxAmt(Exercise03_13.filingStatus.MARRIED_FILING_JOINTLY));
             assertEquals(value[i][3],td.getMarriedSepMaxAmt());
-            assertEquals(value[i][3],td.getMaxAmt(Taxes.filingStatus.MARRIED_FILING_SEPARATE));
+            assertEquals(value[i][3],td.getMaxAmt(Exercise03_13.filingStatus.MARRIED_FILING_SEPARATE));
             assertEquals(value[i][4],td.getHeadMaxAmt());
-            assertEquals(value[i][4],td.getMaxAmt(Taxes.filingStatus.HEAD_OF_HOUSEHOLD));
+            assertEquals(value[i][4],td.getMaxAmt(Exercise03_13.filingStatus.HEAD_OF_HOUSEHOLD));
             td = td.getNextRate();
         }
     }
 }
-

@@ -1,10 +1,19 @@
 import java.util.Scanner;
-public class Taxes {
+public class Exercise03_13 {
     public enum filingStatus{
         SINGLE,
         MARRIED_FILING_JOINTLY,
         MARRIED_FILING_SEPARATE,
         HEAD_OF_HOUSEHOLD
+    }
+
+    private filingStatus status;
+    private TaxData exercise0313;
+    private double taxableIncome;
+
+    public Exercise03_13(TaxData exercise0313) {
+        this.exercise0313 = exercise0313;
+        this.taxableIncome = 0.0d;
     }
 
     public void setStatus(filingStatus status) {
@@ -30,15 +39,6 @@ public class Taxes {
         }
     }
 
-    private filingStatus status;
-    private TaxData taxData;
-    private double taxableIncome;
-
-    public Taxes(TaxData taxData) {
-        this.taxData = taxData;
-        this.taxableIncome = 0.0d;
-    }
-
     public void setTaxableIncome(double taxableIncome) {
         this.taxableIncome = taxableIncome;
     }
@@ -48,16 +48,16 @@ public class Taxes {
         double lastMax = 0.0d;
         boolean flag = true;
         while(flag){
-            flag = this.taxData.hasNext();
-            double currentMax = this.taxData.getMaxAmt(status);
+            flag = this.exercise0313.hasNext();
+            double currentMax = this.exercise0313.getMaxAmt(status);
             if(!flag || currentMax>this.taxableIncome){
-                currentTaxes += (this.taxableIncome-lastMax)*(this.taxData.getRate()/100d);
+                currentTaxes += (this.taxableIncome-lastMax)*(this.exercise0313.getRate()/100d);
                 flag = false;
             }else{
-                currentTaxes += (currentMax-lastMax)*(this.taxData.getRate()/100d);
+                currentTaxes += (currentMax-lastMax)*(this.exercise0313.getRate()/100d);
                 lastMax = currentMax;
             }
-            this.taxData = this.taxData.getNextRate();
+            this.exercise0313 = this.exercise0313.getNextRate();
         }
         return currentTaxes;
     }
@@ -65,24 +65,23 @@ public class Taxes {
 
 class TestingTaxes {
     public static void main(String[] args) {
-        TaxData taxData = new TaxData(10, 8350, 16700, 8350, 11950);
-        TaxData nextTaxData = new TaxData(15, 33950, 67900, 33950, 45500);
-        TaxData head = nextTaxData;
-        taxData.setNextRate(nextTaxData);
-        nextTaxData = new TaxData(25, 82250, 137050, 68525, 117450);
-        head.setNextRate(nextTaxData);
-        head = nextTaxData;
-        nextTaxData = new TaxData(28, 171550, 208850, 104425, 190200);
-        head.setNextRate(nextTaxData);
-        head = nextTaxData;
-        nextTaxData = new TaxData(33, 372950, 372950, 186475, 372950);
-        head.setNextRate(nextTaxData);
-        head = nextTaxData;
-        nextTaxData = new TaxData(35);
-        head.setNextRate(nextTaxData);
+        TaxData exercise0313 = new TaxData(10, 8350, 16700, 8350, 11950);
+        TaxData nextExercise0313 = new TaxData(15, 33950, 67900, 33950, 45500);
+        TaxData head = nextExercise0313;
+        exercise0313.setNextRate(nextExercise0313);
+        nextExercise0313 = new TaxData(25, 82250, 137050, 68525, 117450);
+        head.setNextRate(nextExercise0313);
+        head = nextExercise0313;
+        nextExercise0313 = new TaxData(28, 171550, 208850, 104425, 190200);
+        head.setNextRate(nextExercise0313);
+        head = nextExercise0313;
+        nextExercise0313 = new TaxData(33, 372950, 372950, 186475, 372950);
+        head.setNextRate(nextExercise0313);
+        head = nextExercise0313;
+        nextExercise0313 = new TaxData(35);
+        head.setNextRate(nextExercise0313);
 
-        Taxes taxes = new Taxes(taxData);
-        System.out.println("Owed Taxes: " + taxes.calculateTaxes());
+        Exercise03_13 taxes = new Exercise03_13(exercise0313);
         boolean flag = true;
         while (flag) {
             System.out.print("Enter the filing status: ");
@@ -105,5 +104,6 @@ class TestingTaxes {
                 System.out.println("Please enter taxable income EG: $1000.25.");
             }
         }
+        System.out.println("Tax is: " + taxes.calculateTaxes());
     }
 }
