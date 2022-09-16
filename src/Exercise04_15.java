@@ -1,4 +1,3 @@
-import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Scanner;
 public class Exercise04_15 {
