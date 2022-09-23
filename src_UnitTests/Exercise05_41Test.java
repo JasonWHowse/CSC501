@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Exercise05_41Test {
+class Exercise0541Test {
 
     @Test
     void test1() {
