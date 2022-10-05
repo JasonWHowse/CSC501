@@ -1,8 +1,8 @@
+import java.util.Scanner;
 public class Test {
     public static void main(String[] args) {
-        char ch = '5';
-        int inte = ch-'0';
-        System.out.println(inte);
-
+        for(int c = 0; c<1;c++){
+            System.out.println("test");
+        }
     }
 }
