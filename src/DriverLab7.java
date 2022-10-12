@@ -1,4 +1,4 @@
-public class Driver {
+public class DriverLab7 {
     public static void main(String[] args) {
         int[] nums = {5,10,3,6,7,8,9};
         int index1 = 0, index2 = 0;
