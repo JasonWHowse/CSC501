@@ -140,5 +140,4 @@ class Exercise08Test {
         assertEquals(solution[0],actual[0]);
         assertEquals(solution[1],actual[1]);
     }
-
 }
