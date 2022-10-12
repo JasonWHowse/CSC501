@@ -8,9 +8,9 @@ class Exercise08Test {
     @Test
     void test1() {
         double[][] input = {
-                { 23.5, 35,  2  , 10   },
-                {  4.5,  3, 45  ,  3.5 },
-                { 35  , 44,  5.5,  9.6 }
+                {23.5,35,2,10},
+                {4.5,3,45,3.5},
+                {35,44,5.5,9.6}
         };
         int[] solution = {1, 2};
         test(input, solution);
